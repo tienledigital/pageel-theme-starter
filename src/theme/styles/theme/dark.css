@@ -1,0 +1,11 @@
+/* Dark Mode Theme */
+[data-theme="dark"] {
+  --bg: #0b0b0b;
+  --fg: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #ff5d01;        /* Pageel Orange */
+  --accent-hover: #e04f00;
+  --on-accent: #ffffff;
+  --border: #1e293b;
+  --surface: #111111;
+}

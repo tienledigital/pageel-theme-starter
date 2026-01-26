@@ -1,0 +1,11 @@
+/* Semantic Tokens - Components use ONLY these */
+:root {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+}
