@@ -1,0 +1,5 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+overrides:
+  '@pageel/theme-core': link:../../pageel-theme-kit/repo/packages/core

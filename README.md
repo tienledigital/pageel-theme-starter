@@ -1,73 +1,88 @@
-# 🍊 Pageel Theme Starter
+<div align="center">
+  <img src="https://raw.githubusercontent.com/pageel/pageel-theme-kit/main/public/icon.svg" alt="Pageel Theme Starter" width="100" height="auto" />
+  <h1>Pageel Theme Starter</h1>
+  <p><strong>Official standalone starter template for Astro, powered by @pageel/theme-core and W3C DTCG Design Tokens.</strong></p>
 
-> A premium, production-ready Astro foundation built for the era of **Agentic Coding** and **Swappable Design**.
+[![npm version](https://img.shields.io/badge/version-1.0.0-blue?logo=npm)](https://github.com/pageel/pageel-theme-starter)
+[![Astro Integration](https://img.shields.io/badge/Astro-Integration-FF5D01?logo=astro&logoColor=white)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![Theme Contract](https://img.shields.io/badge/Theme_Contract-v1.0.0-emerald)](https://github.com/pageel/pageel-theme-kit/blob/main/THEME_CONTRACT.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
-[![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-
-**Pageel Theme Starter** is more than just a template. It's an architecture that separates your visual identity from your core logic, allowing you to rotate entire design systems without touching your stable routes or content.
+</div>
 
 ---
 
 ## ✨ Features
 
-- **🚀 Premium Design**: Out-of-the-box "Notion-inspired" modern landing page.
-- **🔄 Swappable Architecture**: All visual code is isolated in `src/theme/`.
-- **🎨 Semantic UI**: Tiered Design System using CSS Variables and Tailwind CSS.
-- **🌓 Native Dark Mode**: Zero-config, persistent dark mode support.
-- **🤖 AI-Optimized**: Clean project structure designed for high-performance agentic workflows.
-- **⚡ Ultra Fast**: Optimized for Astro's latest island architecture.
+- 🚀 **Official Engine Integration**: Powered by `@pageel/theme-core` with zero configuration.
+- 🎨 **W3C DTCG Token Pipeline**: First-class design token system via root `tokens.json` (`$value`, `$type: "color"`).
+- 🥞 **CSS Cascade Layers (`@layer`)**: Built-in 6-tier layer architecture preventing specificity conflicts.
+- 🌓 **Zero-FOUC Native Dark Mode**: Instant theme switching without page flicker or layout shift.
+- 🛡️ **Theme Contract v1.0 Certified**: Build-time verification guaranteeing required semantic design tokens.
+- 🤖 **Agentic & Vibe Coding Ready**: Clean semantic structure optimized for AI development workflows.
 
 ---
 
-## 🛠️ Quick Start
+## 🚀 Quick Start
 
-### 1. Clone & Install
-
-```bash
-git clone https://github.com/pageel/pageel-theme-starter.git
-cd pageel-theme-starter
-npm install
-```
-
-### 2. Start Development
+### Option 1: Using `degit` (Recommended)
 
 ```bash
-npm run dev
+# Scaffold a new project instantly
+npx degit pageel/pageel-theme-starter my-new-site
+cd my-new-site
+
+# Install dependencies and start dev server
+pnpm install
+pnpm dev
 ```
 
-Your site is now running at `http://localhost:4321/`
+### Option 2: Clone via Git
+
+```bash
+git clone https://github.com/pageel/pageel-theme-starter.git my-new-site
+cd my-new-site
+npm install && npm run dev
+```
+
+Your site is now running at `http://localhost:4321/` 🎉
 
 ---
 
 ## 🏗️ Architecture
 
-This project follows the **Pageel Design-Stable Convention**:
-
-```text
-src/
-├── theme/               # 🔄 UI UNIVERSE (The part you swap)
-│   ├── styles/          # Design Tokens (Global, Semantic, Themes)
-│   ├── components/      # Visual primitives
-│   └── layouts/         # Structural templates
-├── pages/               # ✅ ROUTES (Stable)
-├── content/             # ✅ DATA (Stable)
-└── theme.config.ts      # ⚙️ Integration logic
+```
+my-new-site/
+├── tokens.json            # 🎨 W3C DTCG Design Token Overrides
+├── astro.config.mjs       # ⚙️ Astro & createPageelTheme() Configuration
+├── src/
+│   ├── pages/             # ✅ ROUTES & PAGES (Stable content)
+│   ├── theme/             # 🔄 THEME UNIVERSE (Swappable UI/UX)
+│   │   ├── layouts/       # Base Layout wrappers
+│   │   ├── components/    # Reusable UI primitives & ThemeToggle
+│   │   └── styles/        # Global styles & Tailwind v4
+│   └── data/              # Static content & site metadata
 ```
 
 ---
 
-## 🎨 Customization
+## 🎨 Customizing Design Tokens
 
-The theme core uses the **Pageel Orange** brand color (`#ff5d01`). To change the primary identity, edit the accent variables in:
+To change colors, typography, or theme attributes, modify `tokens.json` in your project root:
 
-- `src/theme/styles/theme/light.css`
-- `src/theme/styles/theme/dark.css`
-
-```css
-:root {
-  --accent: #ff5d01;
-  --accent-hover: #e04f00;
+```json
+{
+  "color": {
+    "semantic": {
+      "accent": {
+        "$value": "#ff5d01",
+        "$type": "color",
+        "$description": "Custom brand primary color"
+      }
+    }
+  }
 }
 ```
 
@@ -75,11 +90,14 @@ The theme core uses the **Pageel Orange** brand color (`#ff5d01`). To change the
 
 ## 📦 Ecosystem
 
-This starter is part of the [Pageel Theme Kit](https://github.com/pageel/pageel-theme-kit) ecosystem. Use the `pageel-theme` CLI to install other themes or manage your design system.
+This starter is part of the [Pageel Theme Kit](https://github.com/pageel/pageel-theme-kit) ecosystem.
 
-- **Docs**: [theme.pageel.dev](https://theme.pageel.dev/)
-- **Core**: [Pageel Theme Kit](https://github.com/pageel/pageel-theme-kit)
+- **Parent Monorepo**: [pageel-theme-kit](https://github.com/pageel/pageel-theme-kit)
+- **Core Engine**: [`@pageel/theme-core`](https://github.com/pageel/pageel-theme-kit/tree/main/packages/core)
+- **Theme Contract**: [THEME_CONTRACT.md](https://github.com/pageel/pageel-theme-kit/blob/main/THEME_CONTRACT.md)
 
 ---
 
-Built with ❤️ by [Pageel.com](https://pageel.com)
+<p align="center">
+  Built with ❤️ by <a href="https://github.com/pageel">Pageel</a>
+</p>

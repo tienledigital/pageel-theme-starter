@@ -1,6 +1,20 @@
+// @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
+import createPageelTheme from '@pageel/theme-core';
 
+// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  integrations: [
+    createPageelTheme({
+      features: {
+        darkMode: true,
+        cssLayers: true,
+        validation: true,
+      },
+    }),
+  ],
 });

@@ -52,7 +52,7 @@ export class ThemeManager {
      * Helper để lấy class Dark Mode dựa trên config
      */
     static getThemeClass(currentTheme: string) {
-        if (!projectThemeConfig.features.darkMode) return '';
+        if (!projectThemeConfig.features?.darkMode) return '';
         return currentTheme === 'dark' ? 'dark-mode' : 'light-mode';
     }
 }
